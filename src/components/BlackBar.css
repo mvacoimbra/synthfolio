@@ -1,0 +1,13 @@
+.black-bar__placeholder {
+  position: relative;
+  height: 2.5rem;
+}
+
+.black-bar {
+  background: var(--c-4);
+  box-shadow: 0rem 0rem 3rem 4rem var(--c-4);
+  height: 1rem;
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+}

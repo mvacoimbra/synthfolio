@@ -2,7 +2,7 @@ import React from 'react';
 // css
 import './VideoBg.css';
 // assets
-// components
+// components1
 import Container from './Container';
 import CloudVideo from './CloudVideo';
 

@@ -1,13 +1,13 @@
 .video-bg__container {
   position: relative;
   width: 100%;
-  height: 95vh;
+  height: 99vh;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: solid 0.3rem var(--c-2);
-  box-shadow: 0rem 0rem 2rem 0rem var(--c-2);
+  /* border-bottom: solid 0.3rem var(--c-2);
+  box-shadow: 0rem 0rem 2rem 0rem var(--c-2); */
 }
 
 .video-bg__video {
