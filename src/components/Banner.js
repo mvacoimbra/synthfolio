@@ -2,8 +2,8 @@ import React from 'react';
 // css
 import './Banner.css';
 // components
-import VideoBg from '../VideoBg';
-import CloudImage from '../CloudImage';
+import VideoBg from './VideoBg';
+import CloudImage from './CloudImage';
 
 const Banner = () => {
   return (

@@ -1,0 +1,7 @@
+.monitor__container {
+  background-image: url(https://res.cloudinary.com/mvacoimbra/image/upload/v1689120820/synthfolio/monitor-bg.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+  height: 99vh;
+}

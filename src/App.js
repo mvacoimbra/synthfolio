@@ -1,13 +1,18 @@
 import './App.css';
 // sections
-import NavBar from './components/NavBar'
-import Banner from './components/sections/Banner';
+import Banner from './components/Banner';
+import Monitor from './components/desktop/Monitor';
+import BlackBar from './components/BlackBar';
+import Contact from './components/Contact';
 
 function App() {
   return (
     <div className="App">
-      <NavBar />
       <Banner />
+      <BlackBar />
+      <Monitor />
+      <BlackBar />
+      <Contact />
     </div>
   );
 }
