@@ -4,6 +4,11 @@
   top: 0;
   transform: translate(50%, 40%); */
   z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: banner__logo ease-in 2s;
 }
 
 .banner__landscape {
@@ -13,4 +18,18 @@
   width: 100vw;
   height: 65vh;
   z-index: -1;
+}
+
+@keyframes banner__logo {
+  0% {
+    opacity: 0%;
+    top: 0%;
+  }
+  50% {
+    /* Style at the midpoint of the animation */
+  }
+  100% {
+    opacity: 100%;
+    top: 50%;
+  }
 }

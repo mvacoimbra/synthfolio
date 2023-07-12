@@ -15,28 +15,28 @@ const Contact = () => {
             target="blank"
             className="contact__icon"
           >
-            <i class="fa-brands fa-linkedin"></i>
+            <i className="fa-brands fa-linkedin"></i>
           </a>
           <a
             href="https://github.com/mvacoimbra"
             target="blank"
             className="contact__icon"
           >
-            <i class="fa-brands fa-square-github"></i>
+            <i className="fa-brands fa-square-github"></i>
           </a>
           <a
             href="mailto:mv27.marcoscoimbra@gmail.com"
             target="blank"
             className="contact__icon"
           >
-            <i class="fa-solid fa-square-envelope"></i>
+            <i className="fa-solid fa-square-envelope"></i>
           </a>
           <a
             href="https://discord.gg/2QSreUtJuH"
             target="blank"
             className="contact__icon"
           >
-            <i class="fa-brands fa-discord"></i>
+            <i className="fa-brands fa-discord"></i>
           </a>
         </div>
       </div>
