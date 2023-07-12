@@ -1,14 +1,15 @@
 .contact__container {
   background-image: url(https://res.cloudinary.com/mvacoimbra/image/upload/v1689122833/synthfolio/contact-bg.png);
   background-repeat: no-repeat;
-  background-size: 100%;
-  background-position: center;
+  background-size: cover;
   height: 50vh;
   font-family: 'Audiowide', cursive;
+  overflow: hidden;
   /* flex */
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .contact__title {
@@ -16,6 +17,7 @@
   text-shadow: var(--c-1-txt-glow);
   animation: contact__title 1s ease-in-out infinite alternate;
   margin-bottom: 5rem;
+  overflow: hidden;
 }
 
 .contact__icons {

@@ -1,13 +1,15 @@
 import React from 'react';
 // css
 import './Monitor.css';
-import Desktop from './Desktop'
 // components
+import Screen from './Screen'
+import CloudImage from '../CloudImage'
 
 const Monitor = () => {
   return (
     <div className="monitor__container">
-      <Desktop />
+      <Screen />
+      <CloudImage publicId="synthfolio/mobitor-bg-2" className="monitor__bg" width="1440" height="" />
     </div>
   );
 };
