@@ -1,14 +1,22 @@
 .monitor__container {
-  /* background-image: url(https://res.cloudinary.com/mvacoimbra/image/upload/v1689120820/synthfolio/monitor-bg.png);
+  /* background */
+  background-image: url(https://res.cloudinary.com/mvacoimbra/image/upload/v1689194681/synthfolio/mobitor-bg-2.png);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100% auto;
   background-clip: padding-box;
-  background-position: center; */
+  background-position: center;
+  /* size */
   height: 99vh;
   overflow: hidden;
   position: relative;
+  padding: 72px 0px 0px 80px;
 }
 
-.monitor__bg {
+/* .monitor__bg {
   width: 100%;
-}
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+} */

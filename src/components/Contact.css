@@ -4,7 +4,6 @@
   background-size: cover;
   height: 50vh;
   font-family: 'Audiowide', cursive;
-  overflow: hidden;
   /* flex */
   display: flex;
   align-items: center;
@@ -17,7 +16,6 @@
   text-shadow: var(--c-1-txt-glow);
   animation: contact__title 1s ease-in-out infinite alternate;
   margin-bottom: 5rem;
-  overflow: hidden;
 }
 
 .contact__icons {

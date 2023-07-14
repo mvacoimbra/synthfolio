@@ -9,7 +9,7 @@ const Monitor = () => {
   return (
     <div className="monitor__container">
       <Screen />
-      <CloudImage publicId="synthfolio/mobitor-bg-2" className="monitor__bg" width="1440" height="" />
+      {/* <CloudImage publicId="synthfolio/mobitor-bg-2" className="monitor__bg" width="1440" height="" /> */}
     </div>
   );
 };
