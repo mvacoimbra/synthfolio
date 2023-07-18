@@ -13,7 +13,7 @@ const Shortcut = (props) => {
   const [clickedIcon, setClickedIcon] = useState('')
   const handleIconClick = () => {
     setClickedIcon(program)
-    props.onIconDClick(clickedIcon)
+    props.onIconClick(clickedIcon)
   };
 
   return (

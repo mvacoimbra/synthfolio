@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 // css
 import './Screen.css';
 // components
@@ -8,6 +8,23 @@ import About from './programs/About';
 import Skills from './programs/Skills';
 
 const Screen = () => {
+  // screen size
+  const screenRef = useRef(null);
+  const [screenWidth, setScreenWidth] = useState(0);
+  const [screenHeight, setScreenHeight] = useState(0);
+
+  useEffect(() => {
+    setScreenHeight(screenRef.current.offsetHeight);
+    setScreenWidth(screenRef.current.offsetWidth);
+    console.log(screenRef);
+    console.log(screenHeight, screenWidth);
+  }, [screenRef.current]);
+
+  const screenResizeHandler = (e) => {
+    console.log(e);
+  };
+
+  // shortcuts array
   const shortcuts = [
     {
       icon: 'synthfolio/file-icon',
@@ -21,16 +38,26 @@ const Screen = () => {
     },
   ];
 
-  const [selectedProgram, setSelectedProgram] = useState('')
+  // tracking the clicked program
+  const [selectedProgram, setSelectedProgram] = useState('');
   const handleSelectedIcon = (icon) => {
-    setSelectedProgram(icon)
+    setSelectedProgram(icon);
   };
 
-  console.log(selectedProgram);
+  // tracking mouse movement
+  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+  const handleMouseMove = (e) => {
+    setCursorPosition({ x: e.clientX, y: e.clientY });
+    // console.log(cursorPosition);
+  };
 
   return (
-    <div className="screen__container">
-      <div className="screen__image">
+    <div className="screen__container" onChange={screenResizeHandler}>
+      <div
+        className="screen__image"
+        onMouseMove={handleMouseMove}
+        ref={screenRef}
+      >
         <div className="screen__line"></div>
         <div className="screen__noise"></div>
         <ul className="screen__shortcuts">
@@ -41,16 +68,18 @@ const Screen = () => {
                   publicId={shortcut.icon}
                   name={shortcut.name}
                   program={shortcut.program}
-                  onIconDClick={handleSelectedIcon}
+                  onIconClick={handleSelectedIcon}
                 />
               </div>
             );
           })}
         </ul>
-        {selectedProgram === 'about' && <About active={true} />}
-        {selectedProgram === 'skills' && <Skills active={true} />}
-        {/* <About active={false} />
-          <Skills active={false} /> */}
+        {selectedProgram === 'about' && (
+          <About active={true} cursorPosition={cursorPosition} screenHeight={screenHeight} screenWidth={screenWidth}/>
+        )}
+        {selectedProgram === 'skills' && (
+          <Skills active={true} cursorPosition={cursorPosition} screenHeight={screenHeight} screenWidth={screenWidth}/>
+        )}
       </div>
     </div>
   );

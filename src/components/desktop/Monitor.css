@@ -10,6 +10,8 @@
   overflow: hidden;
   position: relative;
   padding: 72px 0px 0px 80px;
+  /* snap */
+  scroll-snap-align: start;
 }
 
 /* .monitor__bg {

@@ -5,15 +5,15 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 0;
-  /* sizing */
-  width: 600px;
-  /* height: 300px; */
   /* style */
   border: solid 0.5rem var(--c-6);
   background-color: var(--c-7);
   box-shadow: 0rem 0rem 0rem 0.1rem var(--c-7);
+  /* text */
   color: var(--c-6);
   font-size: 2rem;
+  /* scroll */
+  overflow: hidden;
 }
 
 .window__header {
@@ -37,6 +37,17 @@
   align-items: center;
 }
 
+.window__control:hover {
+  scale: 1.1;
+  cursor: pointer;
+}
+
 .window__body {
   padding: 1rem;
+  height: 100%;
+  overflow: auto;
 }
+
+/* .window__body::-webkit-scrollbar-track {
+  width: 1rem;
+} */
