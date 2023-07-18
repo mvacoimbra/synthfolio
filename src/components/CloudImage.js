@@ -4,10 +4,6 @@ import { CloudinaryImage } from '@cloudinary/url-gen';
 import { URLConfig } from '@cloudinary/url-gen';
 import { CloudConfig } from '@cloudinary/url-gen';
 import { fill } from '@cloudinary/url-gen/actions/resize';
-// css
-// import './CloudnaryImage.css';
-// assets
-// components
 
 const CloudImage = (props) => {
   // props

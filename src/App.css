@@ -2,6 +2,11 @@
 @import url(variables.css);
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@font-face {
+  font-family: 'CustomFont'; /* The name you want to give to the font */
+  src: url('./fonts/brushsci-webfont.woff2') format('woff2'), /* Link to your font file */
+       url('./fonts/brushsci-webfont.woff') format('woff'); /* Optional fallback for older browsers */
+}
 
 :root {
   font-size: 62.5%;
@@ -12,4 +17,10 @@
 html {
   background-color: #000408;
   color: var(--c-1);
+}
+
+.App {
+  scroll-snap-type: y proximity;
+  overflow-y: scroll;
+  height: 100vh;
 }

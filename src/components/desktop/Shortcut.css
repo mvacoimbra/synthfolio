@@ -1,0 +1,27 @@
+.shortcut {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
+ }
+
+ .shortcut__icon {
+  cursor: pointer;
+ }
+ 
+ 
+ .shortcut__tag {
+   background-image: url(https://res.cloudinary.com/mvacoimbra/image/upload/v1689252435/synthfolio/file-name-icon.png);
+   background-repeat: no-repeat;
+   background-size: 100% 100%;
+   padding: .5rem 2rem;
+   width: 100%;
+ }
+ 
+ .shortcut__name {
+   color: var(--c-7);
+   font-size: 2rem;
+   text-align: center;
+ }

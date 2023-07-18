@@ -1,0 +1,20 @@
+.about__container {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+
+.about__title {
+  font-size: 6rem;
+  text-decoration: underline 0.2rem;
+  margin-bottom: 1rem;
+}
+
+.about__paragraphs {
+ padding-right: 1rem;
+}
+
+
+.about__face-photo {
+ width: 100%;
+}
+
