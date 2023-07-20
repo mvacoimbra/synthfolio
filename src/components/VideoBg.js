@@ -12,7 +12,7 @@ const VideoBg = (props) => {
   return (
     <Container className="video-bg__container">
       <div className={classes}>{props.children}</div>
-      <CloudVideo className="video-bg__video"></CloudVideo>
+      <CloudVideo className="video-bg__video" publicId='synthfolio/synthvideo'></CloudVideo>
     </Container>
   );
 };

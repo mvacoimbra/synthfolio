@@ -1,8 +1,6 @@
 .screen__container {
   position: relative;
-  /* top: 60%;
-  left: 32%;
-  transform: translate(-32%, -60%); */
+  height: 100%;
   z-index: 1;
 }
 
@@ -12,16 +10,39 @@
   background-size: cover;
   background-repeat: no-repeat;
   /* scale */
-  width: 81.5vw;
-  height: 80vh;
+  height: 100%;
   overflow: hidden;
-  /* --- */
+  /* style */
   border-radius: 40px;
   box-shadow: 0px 0px 100px 0px rgba(160, 242, 126, 0.5),
     0px 0px 80px 50px #000 inset;
   animation: screen__container 1s ease-in-out infinite alternate;
   /* position */
   position: relative;
+  /* animation */
+  transition: all 1s ease-in-out;
+  pointer-events: painted;
+}
+
+.screen__image--off {
+  filter: brightness(0);
+  pointer-events: none;
+}
+
+.screen__black {
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0%;
+  transition: opacity 5s ease-in-out;
+}
+
+.screen__black--off {
+  background-color: black;
+  opacity: 100%;
 }
 
 .screen__line {
@@ -30,20 +51,35 @@
   height: 100%;
   position: absolute;
   opacity: 20%;
-  animation: screen__noise 5s infinite linear;
-  z-index: 1;
+  animation: screen__line 5s infinite linear;
+  z-index: 2;
   pointer-events: none;
+  transition: opacity 4s ease-in-out;
+  
+}
+
+.screen__line--off {
+  opacity: 100%;
+  animation: none;
 }
 
 .screen__noise {
-  background-image: url(https://res.cloudinary.com/mvacoimbra/image/upload/v1689196064/synthfolio/screen-noise-1.png);
+  background-image: url(https://res.cloudinary.com/mvacoimbra/image/upload/v1689894712/synthfolio/noise-white-green.png);
+  background-size: 100%;
   width: 100%;
   height: 100%;
   position: absolute;
-  animation: screen__noise 2000ms infinite linear;
-  z-index: 1;
+  animation: screen__noise 2s infinite alternate;
+  z-index: 2;
   pointer-events: none;
+  opacity: 10%;
+  transition: opacity 4s ease-in-out;
 }
+
+.screen__noise--off {
+ opacity: 100%;
+}
+
 
 .screen__shortcuts {
   display: flex;
@@ -57,12 +93,24 @@
 
 @keyframes screen__noise {
   0% {
-    background-position: -100% -1000%;
+    background-position: 0% 50000%;
+  }
+  50% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 0% -50000%;
+  }
+}
+@keyframes screen__line {
+  0% {
+    background-position: -1000% -1000%;
   }
   100% {
     background-position: 100% 100%;
   }
 }
+
 
 @keyframes screen__container {
   from {

@@ -2,23 +2,37 @@
   /* background */
   background-image: url(https://res.cloudinary.com/mvacoimbra/image/upload/v1689194681/synthfolio/mobitor-bg-2.png);
   background-repeat: no-repeat;
-  background-size: 100% auto;
+  background-size: 100% 100%;
   background-clip: padding-box;
   background-position: center;
   /* size */
   height: 99vh;
   overflow: hidden;
   position: relative;
-  padding: 72px 0px 0px 80px;
+  padding-right: 12%;
+  padding-left: 6%;
+  padding-top: 6%;
+  padding-bottom: 6%;
   /* snap */
   scroll-snap-align: start;
 }
 
-/* .monitor__bg {
-  width: 100%;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 0;
-} */
+.monitor__power {
+ position: absolute;
+ z-index: 2;
+ top: 51%;
+ left: 46%;
+ transform: translate(-46%, -51%);
+ /* style */
+ color: var(--c-6);
+ font-size: 7rem;
+ background: none;
+ text-shadow: 0rem 0rem .5rem var(--c-6);
+ transition: text-shadow .5s ease-in-out;
+}
+
+.monitor__power:hover {
+  cursor: pointer;
+  text-shadow: 0rem 0rem 1.5rem var(--c-6);
+}
+
