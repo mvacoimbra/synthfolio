@@ -8,38 +8,40 @@ import CloudImage from '../CloudImage';
 const Window = ({
   children,
   cursorPosition,
-  active,
-  screenWidth,
-  screenHeight,
+  screenSize,
+  onWindowClose,
+  selectedProgram,
 }) => {
-  // window display
-  const [windowDisplay, setWindowDisplay] = useState('');
   // window size
   const [windowSize, setWindowSize] = useState('50%');
   // window movement
   const [windowPosition, setWindowPosition] = useState({
-    x: screenWidth / 2,
-    y: screenHeight / 2,
+    x: screenSize.width / 2,
+    y: screenSize.height / 2,
   });
+
   const [isDragging, setIsDragging] = useState(false);
   const [clickOffset, setClickOffset] = useState({ x: 0, y: 0 });
 
   // window controls
+  const [actualProgram, setActualProgram] = useState(selectedProgram);
   useEffect(() => {
-    setWindowDisplay(active ? '' : 'none');
-  }, [active]);
+    if (selectedProgram != '') {
+      setActualProgram('');
+    }
+  }, [selectedProgram, windowSize.width]);
 
   const closeClick = () => {
-    setWindowDisplay('none');
+    onWindowClose(actualProgram);
   };
 
   const maxMinClick = () => {
     if (windowSize === '50%') {
       setWindowSize('100%');
       setWindowPosition({
-        x: screenWidth / 2,
-        y: screenHeight / 2,
-      })
+        x: screenSize.width / 2,
+        y: screenSize.height / 2,
+      });
     } else {
       setWindowSize('50%');
     }
@@ -71,13 +73,19 @@ const Window = ({
   return (
     <div
       className="window__container"
-      style={{ display: windowDisplay, top:windowPosition.y, left: windowPosition.x, width: windowSize, height: windowSize }}
+      style={{
+        top: windowPosition.y,
+        left: windowPosition.x,
+        width: windowSize,
+        height: windowSize,
+      }}
     >
       <div
         className="window__header"
         style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
         onMouseDown={windowDragStart}
         onMouseMove={windowDrag}
+        onMouseLeave={windowDragOver}
         onMouseUp={windowDragOver}
       >
         <button className="window__control" onClick={maxMinClick}>
@@ -94,7 +102,7 @@ const Window = ({
           <CloudImage publicId="synthfolio/close-icon" height="20" />
         </button>
       </div>
-      <div className="window__body" >{children}</div>
+      <div className="window__body">{children}</div>
     </div>
   );
 };

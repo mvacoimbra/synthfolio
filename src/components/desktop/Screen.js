@@ -7,22 +7,27 @@ import Shortcut from './Shortcut';
 import About from './programs/About';
 import Skills from './programs/Skills';
 
-const Screen = () => {
+const Screen = ({ power }) => {
   // screen size
   const screenRef = useRef(null);
-  const [screenWidth, setScreenWidth] = useState(0);
-  const [screenHeight, setScreenHeight] = useState(0);
+  const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
-    setScreenHeight(screenRef.current.offsetHeight);
-    setScreenWidth(screenRef.current.offsetWidth);
-    console.log(screenRef);
-    console.log(screenHeight, screenWidth);
-  }, [screenRef.current]);
+    const handleResize = () => {
+      if (screenRef.current) {
+        setScreenSize({
+          width: screenRef.current.offsetWidth,
+          height: screenRef.current.offsetHeight,
+        });
+      }
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
 
-  const screenResizeHandler = (e) => {
-    console.log(e);
-  };
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   // shortcuts array
   const shortcuts = [
@@ -44,6 +49,11 @@ const Screen = () => {
     setSelectedProgram(icon);
   };
 
+  // tracking window closing
+  const handleWindowClose = (windowClosed) => {
+    setSelectedProgram(windowClosed);
+  };
+
   // tracking mouse movement
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   const handleMouseMove = (e) => {
@@ -52,14 +62,21 @@ const Screen = () => {
   };
 
   return (
-    <div className="screen__container" onChange={screenResizeHandler}>
+    <div className="screen__container">
       <div
-        className="screen__image"
+        className={`screen__image ${power ? '' : 'screen__image--off'}`}
         onMouseMove={handleMouseMove}
         ref={screenRef}
       >
-        <div className="screen__line"></div>
-        <div className="screen__noise"></div>
+        <div
+          className={`screen__noise ${power ? '' : 'screen__noise--off'}`}
+        ></div>
+        <div
+          className={`screen__black ${power ? '' : 'screen__black--off'}`}
+        ></div>
+        <div
+          className={`screen__line ${power ? '' : 'screen__line--off'}`}
+        ></div>
         <ul className="screen__shortcuts">
           {shortcuts.map((shortcut, index) => {
             return (
@@ -75,10 +92,20 @@ const Screen = () => {
           })}
         </ul>
         {selectedProgram === 'about' && (
-          <About active={true} cursorPosition={cursorPosition} screenHeight={screenHeight} screenWidth={screenWidth}/>
+          <About
+            cursorPosition={cursorPosition}
+            screenSize={screenSize}
+            onWindowClose={handleWindowClose}
+            selectedProgram={selectedProgram}
+          />
         )}
         {selectedProgram === 'skills' && (
-          <Skills active={true} cursorPosition={cursorPosition} screenHeight={screenHeight} screenWidth={screenWidth}/>
+          <Skills
+            cursorPosition={cursorPosition}
+            screenSize={screenSize}
+            onWindowClose={handleWindowClose}
+            selectedProgram={selectedProgram}
+          />
         )}
       </div>
     </div>

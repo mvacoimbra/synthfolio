@@ -1,7 +1,13 @@
 .about__container {
-  display: grid;
-  grid-template-columns: 3fr 1fr;
+  display: flex;
+  flex-direction: column;
 }
+
+.about__section--1 {
+ display: grid;
+ grid-template-columns: 3fr 1fr;
+}
+
 
 .about__title {
   font-size: 6rem;
@@ -10,11 +16,9 @@
 }
 
 .about__paragraphs {
- padding-right: 1rem;
+  padding-right: 1rem;
 }
-
 
 .about__face-photo {
- width: 100%;
+  width: 100%;
 }
-
