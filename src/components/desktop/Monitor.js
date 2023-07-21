@@ -15,8 +15,9 @@ const Monitor = () => {
   };
 
   const powerClickHandler = () => {
-    playSound('https://res.cloudinary.com/mvacoimbra/video/upload/v1689887694/synthfolio/nobreak.3gp', false)
+    playSound('https://res.cloudinary.com/mvacoimbra/video/upload/v1689906652/synthfolio/screen-load-low.mp3', false)
     setScreenPower(true)
+    playSound('https://res.cloudinary.com/mvacoimbra/video/upload/v1689906460/synthfolio/screen-low-noise.mp3', true)
   };
 
   return (

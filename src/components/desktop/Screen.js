@@ -60,6 +60,7 @@ const Screen = ({ power }) => {
     setCursorPosition({ x: e.clientX, y: e.clientY });
     // console.log(cursorPosition);
   };
+ 
 
   return (
     <div className="screen__container">
