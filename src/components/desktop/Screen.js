@@ -19,6 +19,7 @@ const Screen = ({ power }) => {
           width: screenRef.current.offsetWidth,
           height: screenRef.current.offsetHeight,
         });
+        setSelectedProgram('');
       }
     };
     handleResize();
@@ -42,6 +43,17 @@ const Screen = ({ power }) => {
       program: 'skills',
     },
   ];
+
+  // click sounds
+  const playSound = (audioUrl, loop) => {
+    const audio = new Audio(audioUrl);
+    audio.loop = loop
+    audio.play();
+  };
+
+  const handleClick = () => {
+    playSound('https://res.cloudinary.com/mvacoimbra/video/upload/v1689904583/synthfolio/pong.mp3', false)
+  };
 
   // tracking the clicked program
   const [selectedProgram, setSelectedProgram] = useState('');
@@ -67,6 +79,7 @@ const Screen = ({ power }) => {
       <div
         className={`screen__image ${power ? '' : 'screen__image--off'}`}
         onMouseMove={handleMouseMove}
+        onClick={handleClick}
         ref={screenRef}
       >
         <div
