@@ -2,7 +2,7 @@ import React from 'react';
 // css
 import './Contact.css';
 // components
-import Container from './Container';
+import Container from './UI/Container';
 
 const Contact = () => {
   return (

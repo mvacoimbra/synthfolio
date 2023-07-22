@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 // css
 import './Window.css';
 // componets
-import CloudImage from '../CloudImage';
+import CloudImage from '../UI/CloudImage';
 
 const Window = ({
   children,

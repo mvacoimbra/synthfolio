@@ -52,13 +52,14 @@ const Screen = ({ power }) => {
   };
 
   const handleClick = () => {
-    playSound('https://res.cloudinary.com/mvacoimbra/video/upload/v1689904583/synthfolio/pong.mp3', false)
+    playSound('https://res.cloudinary.com/mvacoimbra/video/upload/v1689948462/synthfolio/click-sound.mp3', false)
   };
 
   // tracking the clicked program
   const [selectedProgram, setSelectedProgram] = useState('');
   const handleSelectedIcon = (icon) => {
     setSelectedProgram(icon);
+    playSound('https://res.cloudinary.com/mvacoimbra/video/upload/v1689904583/synthfolio/pong-sound.mp3', false)
   };
 
   // tracking window closing

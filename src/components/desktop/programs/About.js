@@ -3,8 +3,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import './About.css';
 // components
 import Window from '../Window';
-import CloudImage from '../../CloudImage';
-import TypewriterText from '../../TypewriterText';
+import CloudImage from '../../UI/CloudImage';
+import TypewriterText from '../../UI/TypewriterText';
 
 const About = ({
   cursorPosition,
@@ -21,28 +21,30 @@ const About = ({
   }, [mouthOpen]);
 
   useEffect(() => {
-    loopWithInterval(() => setMouthOpen(!mouthRef.current), 100, 73);
+    const mouthAudio = new Audio(
+      'https://res.cloudinary.com/mvacoimbra/video/upload/v1689954353/synthfolio/beep-sound.mp3'
+    );
+    let interval;
+    let i = 0;
+    interval = setInterval(() => {
+      if (i < 73) {
+        setMouthOpen(!mouthRef.current);
+        console.log(!mouthRef.current);
+        mouthAudio.play();
+        i++;
+      } else {
+        clearInterval(interval);
+        mouthAudio.pause();
+        setMouthOpen(false);
+      }
+    }, 100);
 
     return () => {
-      clearInterval(loopWithInterval);
+      clearInterval(interval);
     };
   }, []);
 
-  const loopWithInterval = (callback, timer, repetitions) => {
-    let i = 0;
-    const interval = setInterval(() => {
-      if (i < repetitions) {
-        callback();
-        i++;
-        console.log(i);
-      } else {
-        clearInterval(interval);
-        setMouthOpen(false);
-      }
-    }, timer);
-  };
   // ----
-
 
   return (
     <Window

@@ -3,7 +3,7 @@ import { useState } from 'react';
 // css
 import './Shortcut.css';
 // components
-import CloudImage from '../CloudImage';
+import CloudImage from '../UI/CloudImage';
 
 const Shortcut = (props) => {
   const publicId = props.publicId;
