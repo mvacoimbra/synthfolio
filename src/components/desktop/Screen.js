@@ -19,6 +19,7 @@ const Screen = ({ power }) => {
           width: screenRef.current.offsetWidth,
           height: screenRef.current.offsetHeight,
         });
+        setSelectedProgram('');
       }
     };
     handleResize();
@@ -43,10 +44,22 @@ const Screen = ({ power }) => {
     },
   ];
 
+  // click sounds
+  const playSound = (audioUrl, loop) => {
+    const audio = new Audio(audioUrl);
+    audio.loop = loop
+    audio.play();
+  };
+
+  const handleClick = () => {
+    playSound('https://res.cloudinary.com/mvacoimbra/video/upload/v1689948462/synthfolio/click-sound.mp3', false)
+  };
+
   // tracking the clicked program
   const [selectedProgram, setSelectedProgram] = useState('');
   const handleSelectedIcon = (icon) => {
     setSelectedProgram(icon);
+    playSound('https://res.cloudinary.com/mvacoimbra/video/upload/v1689904583/synthfolio/pong-sound.mp3', false)
   };
 
   // tracking window closing
@@ -67,6 +80,7 @@ const Screen = ({ power }) => {
       <div
         className={`screen__image ${power ? '' : 'screen__image--off'}`}
         onMouseMove={handleMouseMove}
+        onClick={handleClick}
         ref={screenRef}
       >
         <div

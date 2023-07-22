@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 // css
 import './Window.css';
 // componets
-import CloudImage from '../CloudImage';
+import CloudImage from '../UI/CloudImage';
 
 const Window = ({
   children,
@@ -82,7 +82,11 @@ const Window = ({
     >
       <div
         className="window__header"
-        style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
+        style={{
+          cursor: isDragging
+            ? 'url(https://res.cloudinary.com/mvacoimbra/image/upload/v1689942563/synthfolio/cursor/hand-closed.png), grabbing'
+            : 'url(https://res.cloudinary.com/mvacoimbra/image/upload/v1689942563/synthfolio/cursor/hand-open.png), grab',
+        }}
         onMouseDown={windowDragStart}
         onMouseMove={windowDrag}
         onMouseLeave={windowDragOver}

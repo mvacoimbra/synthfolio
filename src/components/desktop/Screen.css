@@ -16,12 +16,14 @@
   border-radius: 40px;
   box-shadow: 0px 0px 100px 0px rgba(160, 242, 126, 0.5),
     0px 0px 80px 50px #000 inset;
+  cursor: url(https://res.cloudinary.com/mvacoimbra/image/upload/v1689942563/synthfolio/cursor/arrow.png), auto;
   animation: screen__container 1s ease-in-out infinite alternate;
   /* position */
   position: relative;
   /* animation */
   transition: all 1s ease-in-out;
   pointer-events: painted;
+  user-select: none;
 }
 
 .screen__image--off {

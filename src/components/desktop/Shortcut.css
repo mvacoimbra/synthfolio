@@ -8,7 +8,7 @@
  }
 
  .shortcut__icon {
-  cursor: pointer;
+  cursor: url(https://res.cloudinary.com/mvacoimbra/image/upload/v1689942563/synthfolio/cursor/pointer.png), pointer;
  }
  
  

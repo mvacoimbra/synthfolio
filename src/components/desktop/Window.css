@@ -39,7 +39,8 @@
 
 .window__control:hover {
   scale: 1.1;
-  cursor: pointer;
+  cursor: url(https://res.cloudinary.com/mvacoimbra/image/upload/v1689942563/synthfolio/cursor/pointer.png),
+    pointer;
 }
 
 .window__body {

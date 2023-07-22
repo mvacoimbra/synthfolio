@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 // css
 import './Monitor.css';
 // components
-import Screen from './Screen';
+import Screen from './desktop/Screen';
 
 const Monitor = () => {
 
