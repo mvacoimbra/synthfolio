@@ -9,6 +9,9 @@ const Window = ({
   children,
   cursorPosition,
   screenSize,
+  onWindowClick,
+  onWindowDrag,
+  windowMove,
   onWindowClose,
   selectedProgram,
 }) => {
@@ -57,18 +60,19 @@ const Window = ({
     });
   };
 
-  const windowDrag = () => {
-    if (isDragging !== true) return;
-    setWindowPosition(cursorPosition);
-    setWindowPosition({
-      x: cursorPosition.x - clickOffset.x,
-      y: cursorPosition.y - clickOffset.y,
-    });
-  };
+  useEffect(() => {
+    setWindowPosition(windowMove);
+    console.log(windowMove);
+  }, [windowMove]);
 
   const windowDragOver = () => {
     setIsDragging(false);
   };
+
+  useEffect(() => {
+    onWindowDrag(isDragging);
+    onWindowClick(clickOffset);
+  }, [isDragging, clickOffset]);
 
   return (
     <div
@@ -88,8 +92,7 @@ const Window = ({
             : 'url(https://res.cloudinary.com/mvacoimbra/image/upload/v1689942563/synthfolio/cursor/hand-open.png), grab',
         }}
         onMouseDown={windowDragStart}
-        onMouseMove={windowDrag}
-        onMouseLeave={windowDragOver}
+        // onMouseLeave={windowDragOver}
         onMouseUp={windowDragOver}
       >
         <button className="window__control" onClick={maxMinClick}>

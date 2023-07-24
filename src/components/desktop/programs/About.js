@@ -9,7 +9,10 @@ import TypewriterText from '../../UI/TypewriterText';
 const About = ({
   cursorPosition,
   screenSize,
+  onWindowClick,
+  onWindowDrag,
   onWindowClose,
+  windowMove,
   selectedProgram,
 }) => {
   // mouth animation
@@ -29,7 +32,6 @@ const About = ({
     interval = setInterval(() => {
       if (i < 73) {
         setMouthOpen(!mouthRef.current);
-        console.log(!mouthRef.current);
         mouthAudio.play();
         i++;
       } else {
@@ -45,11 +47,19 @@ const About = ({
   }, []);
 
   // ----
+  const [windowDragMove, setWindowDragMove] = useState(windowMove)
+  useEffect(() => {
+    setWindowDragMove(windowMove)
+  }, [windowMove])
+  
 
   return (
     <Window
       cursorPosition={cursorPosition}
       screenSize={screenSize}
+      onWindowClick={onWindowClick}
+      onWindowDrag={onWindowDrag}
+      windowMove={windowDragMove}
       onWindowClose={onWindowClose}
       selectedProgram={selectedProgram}
     >
