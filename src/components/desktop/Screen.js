@@ -47,19 +47,25 @@ const Screen = ({ power }) => {
   // click sounds
   const playSound = (audioUrl, loop) => {
     const audio = new Audio(audioUrl);
-    audio.loop = loop
+    audio.loop = loop;
     audio.play();
   };
 
   const handleClick = () => {
-    playSound('https://res.cloudinary.com/mvacoimbra/video/upload/v1689948462/synthfolio/click-sound.mp3', false)
+    playSound(
+      'https://res.cloudinary.com/mvacoimbra/video/upload/v1689948462/synthfolio/click-sound.mp3',
+      false
+    );
   };
 
   // tracking the clicked program
   const [selectedProgram, setSelectedProgram] = useState('');
   const handleSelectedIcon = (icon) => {
     setSelectedProgram(icon);
-    playSound('https://res.cloudinary.com/mvacoimbra/video/upload/v1689904583/synthfolio/pong-sound.mp3', false)
+    playSound(
+      'https://res.cloudinary.com/mvacoimbra/video/upload/v1689904583/synthfolio/pong-sound.mp3',
+      false
+    );
   };
 
   // tracking window closing
@@ -67,14 +73,37 @@ const Screen = ({ power }) => {
     setSelectedProgram(windowClosed);
   };
 
-  // tracking mouse movement
+  // Handle window drag
+  const [isDragging, setIsDragging] = useState(false);
+  const [clickOffset, setClickOffset] = useState({ x: 0, y: 0 });
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+  const [windowPosition, setWindowPosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    setWindowPosition({
+      x: screenSize.width / 2,
+      y: screenSize.height / 2,
+    });
+  }, [screenSize,selectedProgram]);
+
   const handleMouseMove = (e) => {
     setCursorPosition({ x: e.clientX, y: e.clientY });
-    // console.log(cursorPosition);
+    if (isDragging !== true) return;
+    setWindowPosition({
+      x: cursorPosition.x - clickOffset.x,
+      y: cursorPosition.y - clickOffset.y,
+    });
   };
- 
 
+  const onWindowDrag = (dragStatus) => {
+    setIsDragging(dragStatus);
+  };
+
+  const onWindowClick = (onWindowClick) => {
+    setClickOffset(onWindowClick);
+  };
+
+  // ***********************************************************************
   return (
     <div className="screen__container">
       <div
@@ -110,6 +139,9 @@ const Screen = ({ power }) => {
           <About
             cursorPosition={cursorPosition}
             screenSize={screenSize}
+            onWindowClick={onWindowClick}
+            onWindowDrag={onWindowDrag}
+            windowMove={windowPosition}
             onWindowClose={handleWindowClose}
             selectedProgram={selectedProgram}
           />
