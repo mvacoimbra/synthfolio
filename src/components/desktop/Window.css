@@ -4,7 +4,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 0;
+  z-index: 1;
   /* style */
   border: solid 0.5rem var(--c-6);
   background-color: var(--c-7);

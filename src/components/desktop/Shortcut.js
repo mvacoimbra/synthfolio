@@ -19,7 +19,7 @@ const Shortcut = (props) => {
   return (
     <li className="shortcut">
       <div className="shortcut__icon" onClick={handleIconClick}>
-        <CloudImage publicId={publicId} />
+        <CloudImage publicId={publicId} className='shortcut__icon-img' />
       </div>
       <div className="shortcut__tag">
         <h6 className="shortcut__name">{name}</h6>

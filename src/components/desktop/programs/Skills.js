@@ -5,15 +5,19 @@ import './Skills.css';
 import Window from '../Window';
 
 const Skills = ({
-  cursorPosition,
   screenSize,
+  onWindowClick,
+  onWindowDrag,
   onWindowClose,
+  windowMove,
   selectedProgram,
 }) => {
   return (
     <Window
-      cursorPosition={cursorPosition}
       screenSize={screenSize}
+      onWindowClick={onWindowClick}
+      onWindowDrag={onWindowDrag}
+      windowMove={windowMove}
       onWindowClose={onWindowClose}
       selectedProgram={selectedProgram}
     >

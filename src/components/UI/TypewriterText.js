@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const TypewriterText = ({ text, delay }) => {
+const TypewriterText = ({ text, delay, className }) => {
   const [displayedText, setDisplayedText] = useState('');
   const [cursorVisible, setCursorVisible] = useState(true);
 
@@ -38,7 +38,7 @@ const TypewriterText = ({ text, delay }) => {
   }, []);
 
   return (
-    <div>
+    <div className={className}>
       <span dangerouslySetInnerHTML={{ __html: displayedText }} />
       {cursorVisible && <span className="cursor">|</span>}
     </div>

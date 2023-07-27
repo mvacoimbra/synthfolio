@@ -1,27 +1,36 @@
 .shortcut {
   display: flex;
   flex-direction: column;
-  gap: .5rem;
+  gap: 0.5rem;
   align-items: center;
+  justify-content: center;
   width: fit-content;
   height: fit-content;
- }
+}
 
- .shortcut__icon {
-  cursor: url(https://res.cloudinary.com/mvacoimbra/image/upload/v1689942563/synthfolio/cursor/pointer.png), pointer;
- }
- 
- 
- .shortcut__tag {
-   background-image: url(https://res.cloudinary.com/mvacoimbra/image/upload/v1689252435/synthfolio/file-name-icon.png);
-   background-repeat: no-repeat;
-   background-size: 100% 100%;
-   padding: .5rem 2rem;
-   width: 100%;
- }
- 
- .shortcut__name {
-   color: var(--c-7);
-   font-size: 2rem;
-   text-align: center;
- }
+.shortcut__icon {
+  cursor: url(https://res.cloudinary.com/mvacoimbra/image/upload/v1689942563/synthfolio/cursor/pointer.png),
+    pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.shortcut__icon-img {
+  width: 60%;
+}
+
+.shortcut__tag {
+  background-image: url(https://res.cloudinary.com/mvacoimbra/image/upload/v1689252435/synthfolio/file-name-icon.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding: 0.5rem 2rem;
+  width: 100%;
+}
+
+.shortcut__name {
+  color: var(--c-7);
+  font-size: 2rem;
+  text-align: center;
+}
