@@ -7,7 +7,6 @@ import CloudImage from '../../UI/CloudImage';
 import TypewriterText from '../../UI/TypewriterText';
 
 const About = ({
-  cursorPosition,
   screenSize,
   onWindowClick,
   onWindowDrag,
@@ -45,21 +44,14 @@ const About = ({
       clearInterval(interval);
     };
   }, []);
-
   // ----
-  const [windowDragMove, setWindowDragMove] = useState(windowMove)
-  useEffect(() => {
-    setWindowDragMove(windowMove)
-  }, [windowMove])
-  
 
   return (
     <Window
-      cursorPosition={cursorPosition}
       screenSize={screenSize}
       onWindowClick={onWindowClick}
       onWindowDrag={onWindowDrag}
-      windowMove={windowDragMove}
+      windowMove={windowMove}
       onWindowClose={onWindowClose}
       selectedProgram={selectedProgram}
     >
@@ -68,7 +60,14 @@ const About = ({
           <div className="about__text">
             <h1 className="about__title">About me</h1>
             <div className="about__paragraphs">
+              <CloudImage
+                className="about__face-photo"
+                publicId={`synthfolio/${
+                  mouthOpen ? 'mouth-open' : 'mouth-closed'
+                }`}
+              />
               <TypewriterText
+                className="about__typewriterText"
                 text={`&nbsp; Hello there! I'm Marcos, a passionate individual with a diverse background bridging Chemistry and Computer Science. With a Bachelor's degree in Chemistry, i'm currently on an exciting journey in the tech world as i pursue my studies in Computer Science.
               &nbsp; My career switch was motivated by my innate affinity fortechnology and the limitless growth opportunities it offers. The ever-expanding tech market inspires me to explore and thrive in this dynamic industry.
               &nbsp; Development is my true calling, i love the exhilarating challenge of solving problems, much like playing a never-ending puzzle game. My personal projects and studies have allowed me to delve deeper into this passion, honing my skills as i progress.
@@ -79,14 +78,8 @@ const About = ({
               />
             </div>
           </div>
-          <CloudImage
-            className="about__face-photo"
-            publicId={`synthfolio/${mouthOpen ? 'mouth-open' : 'mouth-closed'}`}
-          />
         </section>
-        <section className="about__section about__section--2">
-          <p>batata</p>
-        </section>
+        <section className="about__section about__section--2"></section>
       </div>
     </Window>
   );

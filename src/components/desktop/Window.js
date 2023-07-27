@@ -7,7 +7,6 @@ import CloudImage from '../UI/CloudImage';
 
 const Window = ({
   children,
-  cursorPosition,
   screenSize,
   onWindowClick,
   onWindowDrag,

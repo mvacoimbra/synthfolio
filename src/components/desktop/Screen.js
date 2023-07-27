@@ -84,7 +84,7 @@ const Screen = ({ power }) => {
       x: screenSize.width / 2,
       y: screenSize.height / 2,
     });
-  }, [screenSize,selectedProgram]);
+  }, [screenSize, selectedProgram]);
 
   const handleMouseMove = (e) => {
     setCursorPosition({ x: e.clientX, y: e.clientY });
@@ -102,6 +102,13 @@ const Screen = ({ power }) => {
   const onWindowClick = (onWindowClick) => {
     setClickOffset(onWindowClick);
   };
+
+  // current date
+
+  const currentDate = new Date
+  const hour = currentDate.getHours()
+  const min = currentDate.getMinutes()
+  const formattedTime = `${hour < 10 ? '0' : ""}${hour}:${min < 10 ? '0' : ''}${min}`;
 
   // ***********************************************************************
   return (
@@ -150,10 +157,16 @@ const Screen = ({ power }) => {
           <Skills
             cursorPosition={cursorPosition}
             screenSize={screenSize}
+            onWindowClick={onWindowClick}
+            onWindowDrag={onWindowDrag}
+            windowMove={windowPosition}
             onWindowClose={handleWindowClose}
             selectedProgram={selectedProgram}
           />
         )}
+        <div className='screen__hour'>
+          <span>{formattedTime}</span>
+        </div>
       </div>
     </div>
   );

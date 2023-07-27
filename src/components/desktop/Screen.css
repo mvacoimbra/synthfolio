@@ -16,7 +16,8 @@
   border-radius: 40px;
   box-shadow: 0px 0px 100px 0px rgba(160, 242, 126, 0.5),
     0px 0px 80px 50px #000 inset;
-  cursor: url(https://res.cloudinary.com/mvacoimbra/image/upload/v1689942563/synthfolio/cursor/arrow.png), auto;
+  cursor: url(https://res.cloudinary.com/mvacoimbra/image/upload/v1689942563/synthfolio/cursor/arrow.png),
+    auto;
   animation: screen__container 1s ease-in-out infinite alternate;
   /* position */
   position: relative;
@@ -54,14 +55,13 @@
   position: absolute;
   opacity: 2%;
   animation: screen__line 6s infinite linear;
-  z-index: 1;
+  z-index: 2;
   pointer-events: none;
   transition: opacity 4s ease-in-out;
-  
 }
 
 .screen__line--off {
-  opacity: 100%;
+  opacity: 50%;
   animation: none;
 }
 
@@ -79,19 +79,35 @@
 }
 
 .screen__noise--off {
- opacity: 100%;
+  opacity: 100%;
 }
 
-
 .screen__shortcuts {
+  /* flex */
   display: flex;
   flex-direction: column;
   gap: 1rem;
   flex-wrap: wrap;
+  /* box */
   padding: 5rem;
 }
 
-
+.screen__hour {
+  /* position */
+  position: absolute;
+  z-index: 0;
+  right: 3rem;
+  bottom: 3rem;
+  /* font */
+  color: var(--c-7);
+  font-size: 3rem;
+  /* background */
+  background-image: url(https://res.cloudinary.com/mvacoimbra/image/upload/v1689252435/synthfolio/file-name-icon.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  /* box */
+  padding: 0.6rem 1rem;
+}
 
 @keyframes screen__noise {
   0% {
@@ -101,9 +117,10 @@
     background-position: 0% 0%;
   }
   100% {
-    background-position: 0%  500vh;
+    background-position: 0% 500vh;
   }
 }
+
 @keyframes screen__line {
   0% {
     background-position: 0% -110vh;
@@ -112,7 +129,6 @@
     background-position: 0% 110vh;
   }
 }
-
 
 @keyframes screen__container {
   from {

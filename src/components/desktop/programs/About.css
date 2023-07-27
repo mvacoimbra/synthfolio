@@ -4,10 +4,14 @@
 }
 
 .about__section--1 {
- display: grid;
- grid-template-columns: 3fr 1fr;
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
+.about__text {
+  height: 100%;
+  overflow: auto;
+}
 
 .about__title {
   font-size: 6rem;
@@ -15,10 +19,18 @@
   margin-bottom: 1rem;
 }
 
-.about__paragraphs {
-  padding-right: 1rem;
+.about__face-photo {
+  float: right;
+  margin-left: 0.5rem;
+  min-width: 15%;
+  max-width: 25%;
 }
 
-.about__face-photo {
-  width: 100%;
+.about__section--2 {
+  /* flex */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* position */
+  margin-top: 1rem;
 }
