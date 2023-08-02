@@ -1,0 +1,75 @@
+.skills__title {
+  font-size: 6rem;
+  text-decoration: underline 0.3rem;
+}
+
+.sheet__header {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.sheet__box {
+  background: var(--c-7-1);
+  border: solid 0.3rem var(--c-6-1);
+  padding: 0.5rem;
+}
+
+.sheet__label {
+  font-size: 1.8rem;
+}
+
+.sheet__name {
+  font-size: 4rem;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.sheet__box.sheet__bio {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.sheet__box.sheet__box--name {
+  border-left: none;
+}
+
+.sheet__bio-cell {
+  width: 33.33%;
+}
+
+.sheet__bio-data {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.sheet__label--metter {
+  color: var(--c-6-1);
+}
+
+.tech-set__box {
+  margin-bottom: 1rem;
+}
+
+.tech-set__list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.tech-set__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  min-width: 10rem;
+}
+
+.tech-set__icon {
+  font-size: 4rem;
+}

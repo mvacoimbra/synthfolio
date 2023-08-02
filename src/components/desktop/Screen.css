@@ -96,17 +96,22 @@
   /* position */
   position: absolute;
   z-index: 0;
-  right: 3rem;
-  bottom: 3rem;
+  right: 0rem;
+  bottom: 0rem;
   /* font */
   color: var(--c-7);
   font-size: 3rem;
   /* background */
-  background-image: url(https://res.cloudinary.com/mvacoimbra/image/upload/v1689252435/synthfolio/file-name-icon.png);
+  /* background-image: url(https://res.cloudinary.com/mvacoimbra/image/upload/v1689252435/synthfolio/file-name-icon.png); */
+  background: var(--c-6);
   background-repeat: no-repeat;
   background-size: 100% 100%;
   /* box */
-  padding: 0.6rem 1rem;
+  padding: 0.1rem 1rem;
+  padding-right: 3rem;
+  /* flex */
+  display: flex;
+  justify-content: right;
 }
 
 @keyframes screen__noise {

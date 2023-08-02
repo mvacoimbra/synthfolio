@@ -108,7 +108,12 @@ const Window = ({
           <CloudImage publicId="synthfolio/close-icon" height="20" />
         </button>
       </div>
-      <div className="window__body">{children}</div>
+      <div
+        className="window__body"
+        style={{ height: `${windowSize === '50%' ? '91%' : '95%'}` }}
+      >
+        {children}
+      </div>
     </div>
   );
 };
