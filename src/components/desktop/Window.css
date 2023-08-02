@@ -13,7 +13,7 @@
   color: var(--c-6);
   font-size: 2rem;
   /* scroll */
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .window__header {
@@ -45,7 +45,6 @@
 
 .window__body {
   padding: 1rem;
-  height: 100%;
   overflow: auto;
 }
 

@@ -73,7 +73,7 @@ const About = ({
               &nbsp; Development is my true calling, i love the exhilarating challenge of solving problems, much like playing a never-ending puzzle game. My personal projects and studies have allowed me to delve deeper into this passion, honing my skills as i progress.
               &nbsp; Aspiring to be a full-stack web developer, I'm eager to combine my knowledge of both front-end and back-end technologies to craft seamless user experiences.
               &nbsp; My experience in the pharmaceutical industry has instilled in me a "procedural" and "methodical" approach to tasks, and I carry these traits into my coding. This penchant for patterns and rules adds a touch of organization to my work, ensuring efficiency and precision.
-              &nbsp; I'm excited about the endless possibilities that lie ahead and look forward to collaborating with like-minded professionals to create innovative solutions.`}
+              &nbsp; I'm excited about the endless possibilities that lie ahead and look forward to collaborating with like-minded professionals to create innovative solutions`}
                 delay={5}
               />
             </div>
