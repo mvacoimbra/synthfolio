@@ -44,7 +44,30 @@ const About = ({
       clearInterval(interval);
     };
   }, []);
-  // ----
+
+  // bio sheet items
+  const bioItens = [
+    {
+      label: 'Role:',
+      description: 'Full-Stack',
+    },
+    {
+      label: 'Age:',
+      description: '23',
+    },
+    {
+      label: 'Gender:',
+      description: 'Male',
+    },
+    {
+      label: 'Contry:',
+      description: 'Brazil',
+    },
+    {
+      label: 'Language:',
+      description: 'English / Portuguese',
+    },
+  ];
 
   return (
     <Window
@@ -79,7 +102,32 @@ const About = ({
             </div>
           </div>
         </section>
-        <section className="about__section about__section--2"></section>
+        <section className="about__section about__section--2">
+          <section className="sheet__header">
+            <div className="sheet__box sheet__bio">
+              {bioItens.map((item, index) => {
+                return (
+                  <div className="sheet__bio-cell" key={index}>
+                    <h3 className="sheet__label">{item.label}</h3>
+                    <h2 className="sheet__bio-data">{item.description}</h2>
+                  </div>
+                );
+              })}
+            </div>
+            <div className="sheet__box sheet__box--name">
+              <h3 className="sheet__label">Name:</h3>
+              <h2 className="sheet__name">Marcos Coimbra</h2>
+            </div>
+          </section>
+        </section>
+        <a
+          href="https://res.cloudinary.com/mvacoimbra/image/upload/v1691017611/synthfolio/Resume_-_Marcos_Coimbra_tu21ts.pdf"
+          download="Resume_-_Marcos_Coimbra_tu21ts.pdf"
+          target="blank"
+          className="about__resume-btn"
+        >
+          Download my Resume
+        </a>
       </div>
     </Window>
   );

@@ -5,8 +5,9 @@
 
 .sheet__header {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 3fr 1fr;
   margin-bottom: 1rem;
+  width: 100%;
 }
 
 .sheet__box {
@@ -32,7 +33,7 @@
 }
 
 .sheet__box.sheet__box--name {
-  border-right: none;
+  border-left: none;
 }
 
 .sheet__bio-cell {
@@ -46,6 +47,10 @@
 
 .sheet__label--metter {
   color: var(--c-6-1);
+}
+
+.tech-set__box {
+  margin-bottom: 1rem;
 }
 
 .tech-set__list {

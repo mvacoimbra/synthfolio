@@ -5,7 +5,7 @@ import './Screen.css';
 // components
 import Shortcut from './Shortcut';
 import About from './programs/About';
-import Skills from './programs/Skills';
+import Skills from './programs/Skills/Skills';
 
 const Screen = ({ power }) => {
   // screen size
@@ -105,10 +105,12 @@ const Screen = ({ power }) => {
 
   // current date
 
-  const currentDate = new Date
-  const hour = currentDate.getHours()
-  const min = currentDate.getMinutes()
-  const formattedTime = `${hour < 10 ? '0' : ""}${hour}:${min < 10 ? '0' : ''}${min}`;
+  const currentDate = new Date();
+  const hour = currentDate.getHours();
+  const min = currentDate.getMinutes();
+  const formattedTime = `${hour < 10 ? '0' : ''}${hour}:${
+    min < 10 ? '0' : ''
+  }${min}`;
 
   // ***********************************************************************
   return (
@@ -164,7 +166,7 @@ const Screen = ({ power }) => {
             selectedProgram={selectedProgram}
           />
         )}
-        <div className='screen__hour'>
+        <div className="screen__hour">
           <span>{formattedTime}</span>
         </div>
       </div>

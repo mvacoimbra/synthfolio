@@ -1,6 +1,7 @@
 .about__container {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .about__section--1 {
@@ -33,4 +34,20 @@
   justify-content: center;
   /* position */
   margin-top: 1rem;
+  /* box */
+  width: 100%;
+}
+
+.about__resume-btn {
+  /* text */
+  text-decoration: none;
+  font-size: 2.2rem;
+  color: var(--c-7);
+  text-align: center;
+  /* background */
+  background: var(--c-6);
+  /* box */
+  width: fit-content;
+  border-radius: 0.1rem;
+  padding: 1rem;
 }
