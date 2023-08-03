@@ -6,6 +6,7 @@ import './Screen.css';
 import Shortcut from './Shortcut';
 import About from './programs/About';
 import Skills from './programs/Skills/Skills';
+import Works from './programs/Works';
 
 const Screen = ({ power }) => {
   // screen size
@@ -41,6 +42,11 @@ const Screen = ({ power }) => {
       icon: 'synthfolio/file-icon',
       name: 'SKILLS.TXT',
       program: 'skills',
+    },
+    {
+      icon: 'synthfolio/folder-icon',
+      name: 'WORKS',
+      program: 'works',
     },
   ];
 
@@ -157,6 +163,17 @@ const Screen = ({ power }) => {
         )}
         {selectedProgram === 'skills' && (
           <Skills
+            cursorPosition={cursorPosition}
+            screenSize={screenSize}
+            onWindowClick={onWindowClick}
+            onWindowDrag={onWindowDrag}
+            windowMove={windowPosition}
+            onWindowClose={handleWindowClose}
+            selectedProgram={selectedProgram}
+          />
+        )}
+        {selectedProgram === 'works' && (
+          <Works
             cursorPosition={cursorPosition}
             screenSize={screenSize}
             onWindowClick={onWindowClick}

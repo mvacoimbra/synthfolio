@@ -60,7 +60,7 @@ const About = ({
       description: 'Male',
     },
     {
-      label: 'Contry:',
+      label: 'Country:',
       description: 'Brazil',
     },
     {
