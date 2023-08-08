@@ -4,7 +4,8 @@
   gap: 0.5rem;
   align-items: center;
   justify-content: center;
-  width: fit-content;
+  min-width: 12rem;
+  max-width: fit-content;
   height: fit-content;
 }
 
@@ -18,7 +19,7 @@
 }
 
 .shortcut__icon-img {
-  width: 60%;
+  width: 6rem;
 }
 
 .shortcut__tag {

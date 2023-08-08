@@ -1,35 +1,30 @@
+.banner__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .banner__logo {
-  /* position: absolute;
-  left: 0;
-  top: 0;
-  transform: translate(50%, 40%); */
   z-index: 1;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  animation: banner__logo ease-in 2s;
+  width: 710px;
+  height: 370px;
 }
 
 .banner__landscape {
   position: absolute;
-  left: 0;
-  top: 0;
+  left: 50%;
+  top: 0%;
+  transform: translate(-50%, 0%);
   width: 100vw;
   height: 65vh;
   z-index: -1;
 }
 
-@keyframes banner__logo {
-  0% {
+@keyframes logo__triangle {
+  from {
     opacity: 0%;
-    top: 0%;
   }
-  50% {
-    /* Style at the midpoint of the animation */
-  }
-  100% {
+  to {
     opacity: 100%;
-    top: 50%;
   }
 }

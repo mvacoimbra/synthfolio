@@ -1,0 +1,27 @@
+.works__list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.works__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--c-6);
+}
+
+.works__link:hover {
+  scale: 1.1;
+}
+
+.works__icon {
+  font-size: 6rem;
+}
+
+.works__tag {
+  text-decoration: none;
+}
