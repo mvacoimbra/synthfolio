@@ -61,7 +61,7 @@ const About = ({
                   diverse background bridging Chemistry and Computer Science.
                   With a Bachelor's degree in Chemistry, i'm currently on an
                   exciting journey in the tech world as i pursue my studies in
-                  Computer Science.
+                  Computer Science..
                 </p>
                 <p>
                   My career switch was motivated by my innate affinity

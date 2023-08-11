@@ -4,7 +4,7 @@ import { AdvancedVideo } from '@cloudinary/react';
 import { fill } from '@cloudinary/url-gen/actions/resize';
 
 // Create and configure the Cloudinary instance.
-const CloudVideo = ({publicId, className}) => {
+const CloudVideo = ({ publicId, className, width, height }) => {
   const cld = new Cloudinary({
     cloud: {
       cloudName: 'mvacoimbra',
@@ -15,7 +15,7 @@ const CloudVideo = ({publicId, className}) => {
   const myVideo = cld.video(publicId);
 
   // Apply the transformation.
-  myVideo.resize(fill(1280, 720));
+  myVideo.resize(fill(width, height));
 
   // classes
   const classes = className;
