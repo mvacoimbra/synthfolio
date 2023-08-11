@@ -11,7 +11,7 @@
 
 .about__text {
   height: 100%;
-  overflow: auto;
+  text-indent: 2rem;
 }
 
 .about__title {
