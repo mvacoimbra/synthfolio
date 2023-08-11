@@ -9,6 +9,8 @@
   background-image: url(https://res.cloudinary.com/mvacoimbra/image/upload/v1689120621/synthfolio/desktop-bg.png);
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
   /* scale */
   height: 100%;
   overflow: hidden;
@@ -102,7 +104,6 @@
   color: var(--c-7);
   font-size: 3rem;
   /* background */
-  /* background-image: url(https://res.cloudinary.com/mvacoimbra/image/upload/v1689252435/synthfolio/file-name-icon.png); */
   background: var(--c-6);
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -143,5 +144,17 @@
   to {
     box-shadow: 0px 0px 100px 0px rgba(160, 242, 126, 0.5),
       0px 0px 80px 50px #000 inset;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .screen__image {
+    border-radius: 0;
+    box-shadow: none;
+    animation: none;
+  }
+
+  .screen__hour {
+    display: none;
   }
 }

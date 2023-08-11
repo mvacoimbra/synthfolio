@@ -1,9 +1,9 @@
 import { useRive } from '@rive-app/react-canvas';
 import projectsRiv from '../../projects.riv';
 
-export default function RiveLogo({ className }) {
+export default function RiveBanner({ className }) {
   const STATE_MACHINE = 'SM-1';
-  const ARTBOARD = 'synth-logo';
+  const ARTBOARD = 'synth-banner';
 
   const { rive, RiveComponent } = useRive({
     src: projectsRiv,

@@ -26,24 +26,36 @@ html {
   height: 100vh;
 }
 
-/* ===== Scrollbar CSS ===== */
-/* Firefox */
-* {
-  scrollbar-width: thin;
-  scrollbar-color: var(--c-6-1) var(--c-7-1);
+@media only screen and (min-width: 600px) {
+  /* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--c-6-1) var(--c-7-1);
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: var(--c-7-1);
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--c-6-1);
+    border-radius: 0px;
+    border: none;
+  }
 }
 
-/* Chrome, Edge, and Safari */
-*::-webkit-scrollbar {
-  width: 12px;
-}
+@media only screen and (max-width: 600px) {
+  .monitor__container {
+    padding: 0;
+  }
 
-*::-webkit-scrollbar-track {
-  background: var(--c-7-1);
-}
-
-*::-webkit-scrollbar-thumb {
-  background-color: var(--c-6-1);
-  border-radius: 0px;
-  border: none;
+  .App {
+    scroll-snap-type: y proximity;
+  }
 }
