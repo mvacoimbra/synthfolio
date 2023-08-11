@@ -2,25 +2,16 @@ import React from 'react';
 // css
 import './Banner.css';
 // components
-import VideoBg from './UI/VideoBg';
-import CloudImage from './UI/CloudImage';
 import RiveLogo from './UI/RiveLogo';
+import RiveBanner from './UI/RiveBanner';
+import Container from './UI/Container';
 
 const Banner = () => {
   return (
-    <VideoBg>
-      <div className="banner__container">
-        {/* <CloudImage
-          publicId="synthfolio/logo-triangle"
-          className="logo__triangle"
-        /> */}
-        <RiveLogo className="banner__logo" />
-        <CloudImage
-          publicId="synthfolio/landscape"
-          className="banner__landscape"
-        />
-      </div>
-    </VideoBg>
+    <Container id="banner__container">
+      <RiveLogo className="banner__logo" />
+      <RiveBanner className="banner__bg" />
+    </Container>
   );
 };
 

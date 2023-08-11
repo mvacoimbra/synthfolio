@@ -18,17 +18,17 @@
 }
 
 .monitor__power {
- position: absolute;
- z-index: 2;
- top: 51%;
- left: 46%;
- transform: translate(-46%, -51%);
- /* style */
- color: var(--c-6);
- font-size: 7rem;
- background: none;
- text-shadow: 0rem 0rem .5rem var(--c-6);
- transition: text-shadow .5s ease-in-out;
+  position: absolute;
+  z-index: 2;
+  top: 51%;
+  left: 46%;
+  transform: translate(-46%, -51%);
+  /* style */
+  color: var(--c-6);
+  font-size: 7rem;
+  background: none;
+  text-shadow: 0rem 0rem 0.5rem var(--c-6);
+  transition: text-shadow 0.5s ease-in-out;
 }
 
 .monitor__power:hover {
@@ -36,3 +36,8 @@
   text-shadow: 0rem 0rem 1.5rem var(--c-6);
 }
 
+@media only screen and (max-width: 600px) {
+  .monitor__container {
+    padding: 0;
+  }
+}

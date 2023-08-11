@@ -1,8 +1,11 @@
 .contact__container {
+  /* background */
   background-image: url(https://res.cloudinary.com/mvacoimbra/image/upload/v1689122833/synthfolio/contact-bg.png);
   background-repeat: no-repeat;
   background-size: cover;
+  /* box */
   height: 50vh;
+  /* text */
   font-family: 'Audiowide', cursive;
   /* flex */
   display: flex;
@@ -22,7 +25,9 @@
 
 .contact__icons {
   display: flex;
+  flex-direction: row;
   justify-content: center;
+  align-items: center;
   gap: 4rem;
   animation: contact__title 1s ease-in-out infinite alternate;
 }
@@ -39,5 +44,20 @@
   }
   to {
     text-shadow: 0rem 0rem 1rem var(--c-1);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .contact__container {
+    height: 100vh;
+    background-position: center;
+  }
+
+  .contact__icons {
+    flex-direction: column;
+  }
+
+  .contact__title {
+    font-size: 5rem;
   }
 }
