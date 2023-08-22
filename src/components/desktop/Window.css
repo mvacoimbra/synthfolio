@@ -13,7 +13,17 @@
   color: var(--c-6);
   font-size: 2rem;
   /* scroll */
-  /* overflow: hidden; */
+  overflow: hidden;
+}
+
+.window__container--mini {
+  width: 50%;
+  height: 50%;
+}
+
+.window__container--maxi {
+  width: 100%;
+  height: 100%;
 }
 
 .window__header {
@@ -46,8 +56,13 @@
 .window__body {
   padding: 1rem;
   overflow: auto;
+  width: 100%;
+  height: 100%;
 }
 
-/* .window__body::-webkit-scrollbar-track {
-  width: 1rem;
-} */
+@media only screen and (max-width: 600px) {
+  .window__container--mini {
+    width: 80%;
+    height: 80%;
+  }
+}

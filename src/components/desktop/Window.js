@@ -61,7 +61,6 @@ const Window = ({
 
   useEffect(() => {
     setWindowPosition(windowMove);
-    console.log(windowMove);
   }, [windowMove]);
 
   const windowDragOver = () => {
@@ -75,12 +74,14 @@ const Window = ({
 
   return (
     <div
-      className="window__container"
+      className={`window__container ${
+        windowSize === '50%'
+          ? 'window__container--mini'
+          : 'window__container--maxi'
+      }`}
       style={{
         top: windowPosition.y,
         left: windowPosition.x,
-        width: windowSize,
-        height: windowSize,
       }}
     >
       <div

@@ -17,14 +17,6 @@ const Works = ({
       title: 'Website-EMCOS',
       link: 'https://emcos-website.vercel.app',
     },
-    {
-      title: 'Website-EMCOS',
-      link: 'https://emcos-website.vercel.app',
-    },
-    {
-      title: 'Website-EMCOS',
-      link: 'https://emcos-website.vercel.app',
-    },
   ];
 
   return (
