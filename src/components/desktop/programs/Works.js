@@ -15,7 +15,15 @@ const Works = ({
   const works = [
     {
       title: 'Website-EMCOS',
-      link: 'https://emcos-website.vercel.app',
+      link: 'https://www.emcos.com.br/',
+    },
+    {
+      title: 'Website-Smart-Cooling',
+      link: 'https://smartcooling.com.br/',
+    },
+    {
+      title: 'Website-Bunch-Software',
+      link: 'https://bunchsoftware.dev/',
     },
   ];
 
